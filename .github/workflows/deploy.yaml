@@ -23,10 +23,14 @@ jobs:
           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Setup Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.11.0
+        uses: google-github-actions/setup-gcloud@v1
 
       - name: Initialize Terraform
         run: terraform init
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Apply Terraform
         run: terraform apply -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
