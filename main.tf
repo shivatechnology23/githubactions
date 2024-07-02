@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "bucket" {
-  name     = "nimbus2000bucket"
+  name     = "thunderbolt-bucket"
   location = "US"
 }
 
